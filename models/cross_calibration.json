@@ -1,0 +1,31 @@
+{
+ "note": "Cross-property calibration matched at the material level (paper Section 2.6): correction_T = mu_T + gamma_k (mean residual of k source points of the same material - mu_S).",
+ "pairs": {
+  "qe_kinetic_mg_g": [
+   {
+    "source": "Li_capacity_mg_g",
+    "gamma": 0.554259022556391,
+    "r2_uncal": 0.503392991182148,
+    "r2_cross": 0.5979653243820192,
+    "gain_CI95": [
+     0.009078101891065202,
+     0.17376027302788805
+    ],
+    "materials": 266
+   }
+  ],
+  "Li_qmax_Langmuir_mg_g": [
+   {
+    "source": "Li_capacity_mg_g",
+    "gamma": 0.008677227722772277,
+    "r2_uncal": 0.47606044502941136,
+    "r2_cross": 0.5755373173988824,
+    "gain_CI95": [
+     0.022042894987677794,
+     0.2092894334999059
+    ],
+    "materials": 202
+   }
+  ]
+ }
+}

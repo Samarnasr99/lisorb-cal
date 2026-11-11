@@ -1,0 +1,556 @@
+{
+ "database_pkl_sha256": "8da0543cbf1067fe20510798383828998bc5bacec16748dd28db84364b060df3",
+ "database_xlsx_sha256": "2346f9c4e81566987b8694f2444399163054c0f605ef639bdcebd5ad75479667",
+ "recipe": {
+  "drop": [
+   "material_name",
+   "name_series_value"
+  ],
+  "blend_weight_group": 0.5,
+  "monotone": true,
+  "bag_seeds": [
+   0,
+   1,
+   2
+  ],
+  "budget": [
+   420,
+   210,
+   150
+  ],
+  "note": "V14 recipe chosen from opt_exp.py on Li capacity: dropping paper-identifying text inputs, Optuna objective = 0.5*random-CV R2 + 0.5*GroupKFold R2, physics-signed monotone constraints, 3-seed bagging of each tuned booster."
+ },
+ "models": {
+  "Li_capacity_mg_g": {
+   "file": "Li_capacity_mg_g.joblib",
+   "sha256": "cb1aed2fba5aac846c0beb5a60210a9d833e074d883aef333c84e8e9c396d4e4",
+   "rows": 4254,
+   "stacking_weights": {
+    "LightGBM*": 0.374,
+    "XGBoost*": 0.44,
+    "CatBoost*": 0.0,
+    "ExtraTrees": 0.186,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.6261,
+    "XGBoost": 0.635,
+    "CatBoost": 0.6217
+   },
+   "tuned_trials": {
+    "LightGBM": 4,
+    "XGBoost": 5,
+    "CatBoost": 3
+   },
+   "monotone_constraints_boosters": {
+    "Li_mg_L": 1,
+    "adsorbent_dose_g_L": -1,
+    "Li_per_dose_mg_g": 1,
+    "log_Li_per_dose": 1,
+    "log_Li": 1,
+    "log_dose": -1
+   },
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793593627.2821157,
+   "predictions_sha256": "4c7cdd1a1bd657d430d8838b846afbbe484e5f86ec5d2f4d83ab68c2a6b65efa",
+   "R2_in_sample": 0.9911349061328323
+  },
+  "Li_qmax_Langmuir_mg_g": {
+   "file": "Li_qmax_Langmuir_mg_g.joblib",
+   "sha256": "7f23840b7c2cf7b00dbcfd509f726de8120b5b1141201deb03474cdb4fd4ba02",
+   "rows": 607,
+   "stacking_weights": {
+    "LightGBM*": 0.0,
+    "XGBoost*": 0.469,
+    "CatBoost*": 0.126,
+    "ExtraTrees": 0.081,
+    "RandomForest": 0.324
+   },
+   "tuned_objective": {
+    "LightGBM": 0.6163,
+    "XGBoost": 0.6189,
+    "CatBoost": 0.6198
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 30,
+    "CatBoost": 12
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793596760.734044,
+   "predictions_sha256": "b96d9dfec388c3f11de02fa57a60375770a96331dc13907bba2292ef53d2b339",
+   "R2_in_sample": 0.9708973927310887
+  },
+  "Langmuir_KL_L_mg": {
+   "file": "Langmuir_KL_L_mg.joblib",
+   "sha256": "f1a7c0eec02734ef8a0a52f73c8c5de3a3bf0707a4a201a968effdc8629ac192",
+   "rows": 603,
+   "stacking_weights": {
+    "LightGBM*": 0.215,
+    "XGBoost*": 0.336,
+    "CatBoost*": 0.172,
+    "ExtraTrees": 0.277,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.3533,
+    "XGBoost": 0.3696,
+    "CatBoost": 0.3616
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 30,
+    "CatBoost": 12
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793597476.3020277,
+   "predictions_sha256": "830e5cf9cf4bcffc7cc77fb93f657f9aa800c4d8a77e45c2752478ede4bd254f",
+   "R2_in_sample": 0.9912390421894388
+  },
+  "k1_pseudo_first_order_1_min": {
+   "file": "k1_pseudo_first_order_1_min.joblib",
+   "sha256": "fb9b5ba494fce84ed12903cb5b15bfbd67bc93d804f74f12b6110ae8bdfc0ae9",
+   "rows": 634,
+   "stacking_weights": {
+    "LightGBM*": 0.17,
+    "XGBoost*": 0.414,
+    "CatBoost*": 0.008,
+    "ExtraTrees": 0.407,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.4297,
+    "XGBoost": 0.4222,
+    "CatBoost": 0.4286
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 26,
+    "CatBoost": 12
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793598133.6620126,
+   "predictions_sha256": "1752dcc06677ec64db1321e14c214078a2fabe1bd96a3dd0c5de0315f0643846",
+   "R2_in_sample": 0.9828404561664702
+  },
+  "k2_pseudo_second_order_g_mg_min": {
+   "file": "k2_pseudo_second_order_g_mg_min.joblib",
+   "sha256": "5f08a142e5f0a9117de37e3df651ccc647bb20d593494c3cd3dbf02280557af0",
+   "rows": 711,
+   "stacking_weights": {
+    "LightGBM*": 0.2,
+    "XGBoost*": 0.27,
+    "CatBoost*": 0.0,
+    "ExtraTrees": 0.326,
+    "RandomForest": 0.204
+   },
+   "tuned_objective": {
+    "LightGBM": 0.5197,
+    "XGBoost": 0.5244,
+    "CatBoost": 0.5003
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 30,
+    "CatBoost": 12
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793598765.9619982,
+   "predictions_sha256": "ca9438199f7334f685566edee49842ff05c90633f5822a86546d9ee1bdb5f1fb",
+   "R2_in_sample": 0.986041238307323
+  },
+  "qe_kinetic_mg_g": {
+   "file": "qe_kinetic_mg_g.joblib",
+   "sha256": "c42bc1933d2a8aac2c1015d89d5580fad6438d7d9ad41dafff587d2ba52de8fa",
+   "rows": 693,
+   "stacking_weights": {
+    "LightGBM*": 0.698,
+    "XGBoost*": 0.0,
+    "CatBoost*": 0.0,
+    "ExtraTrees": 0.302,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.6297,
+    "XGBoost": 0.6212,
+    "CatBoost": 0.628
+   },
+   "tuned_trials": {
+    "LightGBM": 10,
+    "XGBoost": 12,
+    "CatBoost": 3
+   },
+   "monotone_constraints_boosters": {
+    "Li_mg_L": 1,
+    "adsorbent_dose_g_L": -1,
+    "Li_per_dose_mg_g": 1,
+    "log_Li_per_dose": 1,
+    "log_Li": 1,
+    "log_dose": -1
+   },
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793599857.2379732,
+   "predictions_sha256": "2c41cd671887df27389ce8c24c6236586dcd30c2d27cc89c14ad45a9f919f9ed",
+   "R2_in_sample": 0.9966557119559581
+  },
+  "Kd_distribution_coeff": {
+   "file": "Kd_distribution_coeff.joblib",
+   "sha256": "bd3e96af000d6b18c3839e7b6ee9964d0d11fddbe67b113b973880b609eddfca",
+   "rows": 388,
+   "stacking_weights": {
+    "LightGBM*": 0.0,
+    "XGBoost*": 0.267,
+    "CatBoost*": 0.504,
+    "ExtraTrees": 0.229,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.3511,
+    "XGBoost": 0.3618,
+    "CatBoost": 0.3587
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 24,
+    "CatBoost": 8
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793594094.370105,
+   "predictions_sha256": "c3f639980f48ef43fab1bf3f08d99a7fdeab32afc9d8509808b801e1dd8b69cb",
+   "R2_in_sample": 0.9916361649110593
+  },
+  "alpha_Li_Mg": {
+   "file": "alpha_Li_Mg.joblib",
+   "sha256": "66cf91a90e5ec579b3cf2c0ad312b3978f443ff58b35b966a934dce246dfd103",
+   "rows": 393,
+   "stacking_weights": {
+    "LightGBM*": 0.0,
+    "XGBoost*": 0.0,
+    "CatBoost*": 0.622,
+    "ExtraTrees": 0.378,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.3574,
+    "XGBoost": 0.3638,
+    "CatBoost": 0.4192
+   },
+   "tuned_trials": {
+    "LightGBM": 39,
+    "XGBoost": 20,
+    "CatBoost": 7
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793595101.078082,
+   "predictions_sha256": "cfa2de67549fc0c4e02699ca322524f14161573c8f4be086dc4de1485eaa29a2",
+   "R2_in_sample": 0.9960144238230162
+  },
+  "alpha_Li_Na": {
+   "file": "alpha_Li_Na.joblib",
+   "sha256": "6b9ac6027b57041ce8c4a9b5cdfa7a50c6ec89026092aff7e9f881afbf2e245f",
+   "rows": 449,
+   "stacking_weights": {
+    "LightGBM*": 0.388,
+    "XGBoost*": 0.0,
+    "CatBoost*": 0.496,
+    "ExtraTrees": 0.115,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.4631,
+    "XGBoost": 0.4629,
+    "CatBoost": 0.468
+   },
+   "tuned_trials": {
+    "LightGBM": 37,
+    "XGBoost": 20,
+    "CatBoost": 6
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793596249.4900558,
+   "predictions_sha256": "e155fdca6436d21e480aab1af4159d8c0ef39b3e35090922a42449565924e473",
+   "R2_in_sample": 0.9945577505467955
+  },
+  "alpha_Li_K": {
+   "file": "alpha_Li_K.joblib",
+   "sha256": "eff80d95782bd7f4244ecdb52eb302ba582bfb739abec463fc3a65efe70aa784",
+   "rows": 429,
+   "stacking_weights": {
+    "LightGBM*": 0.214,
+    "XGBoost*": 0.0,
+    "CatBoost*": 0.739,
+    "ExtraTrees": 0.047,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.3767,
+    "XGBoost": 0.3598,
+    "CatBoost": 0.3894
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 27,
+    "CatBoost": 7
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793595652.8860693,
+   "predictions_sha256": "79dca89768ca36f5b497f76562caca87a5c7c1fad416ddb8a12ae5ed783e7c46",
+   "R2_in_sample": 0.9870277964507859
+  },
+  "alpha_Li_Ca": {
+   "file": "alpha_Li_Ca.joblib",
+   "sha256": "8db5183a91dbd6a9583615ec9a6d57c41191217001d686dca8c13b607b6eecf8",
+   "rows": 312,
+   "stacking_weights": {
+    "LightGBM*": 0.204,
+    "XGBoost*": 0.0,
+    "CatBoost*": 0.306,
+    "ExtraTrees": 0.227,
+    "RandomForest": 0.263
+   },
+   "tuned_objective": {
+    "LightGBM": 0.2999,
+    "XGBoost": 0.3582,
+    "CatBoost": 0.3303
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 21,
+    "CatBoost": 9
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793594552.8140945,
+   "predictions_sha256": "5e787db2e5aeef5eea3c9a548ad340c1109a7257ea097e9f1cc1a40521b97abd",
+   "R2_in_sample": 0.9795100174588482
+  },
+  "Mn_dissolution_percent": {
+   "file": "Mn_dissolution_percent.joblib",
+   "sha256": "4b7927eb5b23dda54ea8eb44887e7518a9a791d13d92e007345d8cdd56935c59",
+   "rows": 979,
+   "stacking_weights": {
+    "LightGBM*": 0.0,
+    "XGBoost*": 0.0,
+    "CatBoost*": 0.81,
+    "ExtraTrees": 0.19,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.4292,
+    "XGBoost": 0.4256,
+    "CatBoost": 0.4764
+   },
+   "tuned_trials": {
+    "LightGBM": 28,
+    "XGBoost": 30,
+    "CatBoost": 3
+   },
+   "monotone_constraints_boosters": {
+    "acid_treatment_conc_M": 1
+   },
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793600734.5699532,
+   "predictions_sha256": "e6e1b566a1be454158252644b60d79018f5b25da95bb034ba29ea5fa46f4bd02",
+   "R2_in_sample": 0.9856012691106699
+  },
+  "Freundlich_KF": {
+   "file": "Freundlich_KF.joblib",
+   "sha256": "b4457962e7568fbf1da12a5eed6841c925fae676d87dbcade9ac46b7698966c1",
+   "rows": 557,
+   "stacking_weights": {
+    "LightGBM*": 0.434,
+    "XGBoost*": 0.0,
+    "CatBoost*": 0.566,
+    "ExtraTrees": 0.0,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.4498,
+    "XGBoost": 0.4333,
+    "CatBoost": 0.4294
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 22,
+    "CatBoost": 10
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793601249.7779415,
+   "predictions_sha256": "2a0b9f3fa53264c3d8e288f90cf3a9d1480ceaba29b13a7977943f51fd9420ca",
+   "R2_in_sample": 0.9876319562352328
+  },
+  "Freundlich_n": {
+   "file": "Freundlich_n.joblib",
+   "sha256": "6588936d7912979932b77ed48a0d7e3b002b0095e1b33eb91b25b88ce4aa27ff",
+   "rows": 561,
+   "stacking_weights": {
+    "LightGBM*": 0.369,
+    "XGBoost*": 0.293,
+    "CatBoost*": 0.027,
+    "ExtraTrees": 0.311,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.2773,
+    "XGBoost": 0.2755,
+    "CatBoost": 0.2463
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 24,
+    "CatBoost": 10
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793601783.4139292,
+   "predictions_sha256": "05d60c4877db840088dcc285b5e24ca8994cb8230adc89c29dca04355ab7a7b6",
+   "R2_in_sample": 0.9698423861310803
+  },
+  "Li_recovery_percent": {
+   "file": "Li_recovery_percent.joblib",
+   "sha256": "1b851d23d7e0f1ad94c68b2c2e0694df607ea63df3987ef127fda935275ee86f",
+   "rows": 308,
+   "stacking_weights": {
+    "LightGBM*": 0.179,
+    "XGBoost*": 0.472,
+    "CatBoost*": 0.112,
+    "ExtraTrees": 0.236,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.2277,
+    "XGBoost": 0.2582,
+    "CatBoost": 0.2298
+   },
+   "tuned_trials": {
+    "LightGBM": 20,
+    "XGBoost": 12,
+    "CatBoost": 11
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793602398.513915,
+   "predictions_sha256": "7ce56b23dd66ea08f431213cdc544a030adc0bc00ed6575ba9e10a44d9c0ef70",
+   "R2_in_sample": 0.9991738163428269
+  },
+  "Li_removal_percent": {
+   "file": "Li_removal_percent.joblib",
+   "sha256": "9146e543d186d6671f0dfe2c4debe846f8bbf020c822e59b2bb202e88a06a9ce",
+   "rows": 274,
+   "stacking_weights": {
+    "LightGBM*": 0.019,
+    "XGBoost*": 0.462,
+    "CatBoost*": 0.36,
+    "ExtraTrees": 0.042,
+    "RandomForest": 0.117
+   },
+   "tuned_objective": {
+    "LightGBM": 0.3252,
+    "XGBoost": 0.3092,
+    "CatBoost": 0.3452
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 14,
+    "CatBoost": 12
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793602934.457903,
+   "predictions_sha256": "63fa82c8d7d5505cd5f02a615be3bb7a73d8067544e77e50516431be106fa5bb",
+   "R2_in_sample": 0.9957589372548089
+  },
+  "Li_desorption_recovery_percent": {
+   "file": "Li_desorption_recovery_percent.joblib",
+   "sha256": "29667ae2c9e2088fc1408901ae4882cdd2057b8e8d44621a4ed505cc60ca4015",
+   "rows": 605,
+   "stacking_weights": {
+    "LightGBM*": 0.471,
+    "XGBoost*": 0.299,
+    "CatBoost*": 0.23,
+    "ExtraTrees": 0.0,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.3441,
+    "XGBoost": 0.3434,
+    "CatBoost": 0.3373
+   },
+   "tuned_trials": {
+    "LightGBM": 17,
+    "XGBoost": 13,
+    "CatBoost": 12
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793604784.6298606,
+   "predictions_sha256": "61b9ed3129fbd63a91a138d7a189e89e20ed68ab6c02f5958a1951b6a588d39d",
+   "R2_in_sample": 0.9840993272619194
+  },
+  "capacity_retention_percent": {
+   "file": "capacity_retention_percent.joblib",
+   "sha256": "91e8a967b3baeafa69ec8d43ed12be3bc229cb83941fe78979e98cdec9b3bdf1",
+   "rows": 406,
+   "stacking_weights": {
+    "LightGBM*": 0.0,
+    "XGBoost*": 0.523,
+    "CatBoost*": 0.477,
+    "ExtraTrees": 0.0,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.2939,
+    "XGBoost": 0.2885,
+    "CatBoost": 0.2786
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 10,
+    "CatBoost": 10
+   },
+   "monotone_constraints_boosters": {},
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793603436.7178915,
+   "predictions_sha256": "075290607e480bdce50278d65bfea46fd30a4c4c453502b1d099cca5a6526d88",
+   "R2_in_sample": 0.7285403211879375
+  },
+  "Ti_dissolution_percent": {
+   "file": "Ti_dissolution_percent.joblib",
+   "sha256": "fb5d26f8bc3aee2b1e055d6de7d4d798eaec73336074ab765886ef7fc60d2785",
+   "rows": 311,
+   "stacking_weights": {
+    "LightGBM*": 0.0,
+    "XGBoost*": 0.632,
+    "CatBoost*": 0.048,
+    "ExtraTrees": 0.32,
+    "RandomForest": 0.0
+   },
+   "tuned_objective": {
+    "LightGBM": 0.2106,
+    "XGBoost": 0.2796,
+    "CatBoost": 0.2638
+   },
+   "tuned_trials": {
+    "LightGBM": 40,
+    "XGBoost": 27,
+    "CatBoost": 3
+   },
+   "monotone_constraints_boosters": {
+    "acid_treatment_conc_M": 1
+   },
+   "monotone_constraints_forests": {},
+   "model_mtime": 1793603974.577879,
+   "predictions_sha256": "de90f515d57a47acac4eac8c6ed5b4c4f1ab2c4b1446f9c25ad056141a91405f",
+   "R2_in_sample": 0.9528327946862635
+  }
+ }
+}
